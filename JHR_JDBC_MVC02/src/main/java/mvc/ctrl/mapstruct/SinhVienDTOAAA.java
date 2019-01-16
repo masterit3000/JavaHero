@@ -3,23 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mvc.ctrl.dto;
-
-import java.util.Date;
-import mvc.entity.LopHoc;
+package mvc.ctrl.mapstruct;
 
 /**
  *
  * @author Admin
  */
-public class SinhVienDTO {
+public class SinhVienDTOAAA {
 
     private int ma;
     private String ten;
-    private String gioiTinh;
     private String ngaySinh;
-    private String lopHoc;
-    private LopHocDTO lop;
+    private int lopHocID;
 
     public int getMa() {
         return ma;
@@ -45,28 +40,12 @@ public class SinhVienDTO {
         this.ngaySinh = ngaySinh;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
+    public int getLopHocID() {
+        return lopHocID;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
-
-    public String getLopHoc() {
-        return lopHoc;
-    }
-
-    public void setLopHoc(String lopHoc) {
-        this.lopHoc = lopHoc;
-    }
-
-    public LopHocDTO getLop() {
-        return lop;
-    }
-
-    public void setLop(LopHocDTO lop) {
-        this.lop = lop;
+    public void setLopHocID(int lopHoc) {
+        this.lopHocID = lopHoc;
     }
 
 }

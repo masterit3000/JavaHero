@@ -51,7 +51,7 @@ public class SinhVienDAO implements IDAO<SinhVien, Integer> {
             DBConnection.close(null, ps, cnn);
         }
         return null;
-    }
+    }//JPA
     
     @Override
     public SinhVien updateById(SinhVien t) {

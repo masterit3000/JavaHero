@@ -13,7 +13,7 @@ import sun.java2d.pipe.SpanShapeRenderer;
  *
  * @author Admin
  */
-public class DateTimeConvert {
+public class DateTimeConverter {
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 

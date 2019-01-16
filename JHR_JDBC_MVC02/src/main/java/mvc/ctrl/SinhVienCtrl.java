@@ -24,7 +24,6 @@ import mvc.entity.SinhVien;
 public class SinhVienCtrl implements IController<SinhVienDTO, Integer> {
 
     SinhVienMapping mapping = new SinhVienMapping();
-
     SinhVienDAO svdao = new SinhVienDAO();
 
     @Override
