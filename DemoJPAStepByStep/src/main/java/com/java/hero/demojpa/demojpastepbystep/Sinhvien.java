@@ -5,6 +5,8 @@
  */
 package com.java.hero.demojpa.demojpastepbystep;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -19,6 +21,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -30,8 +33,12 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Sinhvien.findAll", query = "SELECT s FROM Sinhvien s")
     , @NamedQuery(name = "Sinhvien.findByMa", query = "SELECT s FROM Sinhvien s WHERE s.ma = :ma")
     , @NamedQuery(name = "Sinhvien.findByTen", query = "SELECT s FROM Sinhvien s WHERE s.ten = :ten")
+    , @NamedQuery(name = "Sinhvien.findByTenFullTextSearch", query = "SELECT s FROM Sinhvien s WHERE s.ten like :key")
     , @NamedQuery(name = "Sinhvien.findByNgaySinh", query = "SELECT s FROM Sinhvien s WHERE s.ngaySinh = :ngaySinh")})
 public class Sinhvien implements Serializable {
+
+    @Transient
+    private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
 
     private static final long serialVersionUID = 1L;
     @Id //chi ra đây là thuộc tính khóa chính
@@ -68,7 +75,9 @@ public class Sinhvien implements Serializable {
     }
 
     public void setMa(Integer ma) {
+        Integer oldMa = this.ma;
         this.ma = ma;
+        changeSupport.firePropertyChange("ma", oldMa, ma);
     }
 
     public String getTen() {
@@ -76,7 +85,9 @@ public class Sinhvien implements Serializable {
     }
 
     public void setTen(String ten) {
+        String oldTen = this.ten;
         this.ten = ten;
+        changeSupport.firePropertyChange("ten", oldTen, ten);
     }
 
     public Date getNgaySinh() {
@@ -84,7 +95,9 @@ public class Sinhvien implements Serializable {
     }
 
     public void setNgaySinh(Date ngaySinh) {
+        Date oldNgaySinh = this.ngaySinh;
         this.ngaySinh = ngaySinh;
+        changeSupport.firePropertyChange("ngaySinh", oldNgaySinh, ngaySinh);
     }
 
     @Override
@@ -110,6 +123,14 @@ public class Sinhvien implements Serializable {
     @Override
     public String toString() {
         return "com.java.hero.demojpa.demojpastepbystep.Sinhvien[ ma=" + ma + " ]";
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.removePropertyChangeListener(listener);
     }
     
 }
