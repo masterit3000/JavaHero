@@ -5,7 +5,7 @@
  */
 package com.java.hero.demojpa.demojpastepbystep.service.map;
 
-import com.java.hero.demojpa.demojpastepbystep.Sinhvien;
+import mvc.dmmm.dmcvvv.entity.Sinhvien;
 import com.java.hero.demojpa.demojpastepbystep.service.dto.SinhVienDTO;
 import com.java.hero.demojpa.demojpastepbystep.service.utili.DateTimeConverter;
 

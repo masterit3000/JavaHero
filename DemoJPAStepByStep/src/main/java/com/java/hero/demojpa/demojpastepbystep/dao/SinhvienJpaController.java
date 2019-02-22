@@ -5,7 +5,7 @@
  */
 package com.java.hero.demojpa.demojpastepbystep.dao;
 
-import com.java.hero.demojpa.demojpastepbystep.Sinhvien;
+import mvc.dmmm.dmcvvv.entity.Sinhvien;
 import com.java.hero.demojpa.demojpastepbystep.exceptions.CreateException;
 import com.java.hero.demojpa.demojpastepbystep.exceptions.NonexistentEntityException;
 import java.io.Serializable;

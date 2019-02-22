@@ -5,7 +5,7 @@
  */
 package testmain;
 
-import com.java.hero.demojpa.demojpastepbystep.Sinhvien;
+import mvc.dmmm.dmcvvv.entity.Sinhvien;
 import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

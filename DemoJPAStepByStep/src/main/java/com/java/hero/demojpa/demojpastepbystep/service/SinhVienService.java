@@ -5,7 +5,7 @@
  */
 package com.java.hero.demojpa.demojpastepbystep.service;
 
-import com.java.hero.demojpa.demojpastepbystep.Sinhvien;
+import mvc.dmmm.dmcvvv.entity.Sinhvien;
 import com.java.hero.demojpa.demojpastepbystep.dao.SinhvienJpaController;
 import com.java.hero.demojpa.demojpastepbystep.exceptions.CreateException;
 import com.java.hero.demojpa.demojpastepbystep.service.dto.SinhVienDTO;
@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javax.persistence.EntityManagerFactory;
 import jdk.nashorn.internal.runtime.options.Option;
 
@@ -58,7 +59,8 @@ public class SinhVienService implements IService<SinhVienDTO> {
 
     @Override
     public List<SinhVienDTO> selectAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        return controller.findSinhvienEntities().stream().map(mapper::toDTO).collect(Collectors.toList());
     }
 
     @Override
