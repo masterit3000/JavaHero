@@ -1,0 +1,43 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "demo.javahero",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "demoJavaHeroooo",
+        "packageName": "demo.javahero",
+        "packageFolder": "demo/javahero",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "mysql",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "MGRhOWYyOWEyYjBmYmEyMGY5MGYyZDkzOTc0NzVjNjFiY2Y1YjI4MzU0OTM1NGUzNGIxN2U1YTI5ZWQ5NTkyMjVlNDllZWNkMTFiNjFhNDhhMjYxNjJjNTc5OGQ5NTNmNGFjNGRiN2U4YThiODBjMDdmZTAxZjVjMWNiYmRhYTk=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [
+            {
+                "name": "generator-jhipster-angular-material-integration",
+                "version": "1.0.17"
+            }
+        ],
+        "enableTranslation": true,
+        "nativeLanguage": "en",
+        "languages": ["en", "vi"]
+    }
+}

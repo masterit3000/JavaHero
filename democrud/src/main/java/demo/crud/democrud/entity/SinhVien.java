@@ -18,6 +18,7 @@ import javax.persistence.Table;
  *
  * @author Admin
  */
+
 @Entity
 @Table(name = "sinhvien")
 public class SinhVien {
