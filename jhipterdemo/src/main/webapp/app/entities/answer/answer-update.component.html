@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-answer-heading" jhiTranslate="demoJavaHerooooApp.answer.home.createOrEditLabel">Create or edit a Answer</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!answer.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="answer.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.answer.scoreLadder" for="field_scoreLadder">Score Ladder</label>
+                    <select class="form-control" name="scoreLadder" [(ngModel)]="answer.scoreLadder" id="field_scoreLadder" >
+                        <option value="FAIL">{{'demoJavaHerooooApp.ScoreLadder.FAIL' | translate}}</option>
+                        <option value="PASS">{{'demoJavaHerooooApp.ScoreLadder.PASS' | translate}}</option>
+                        <option value="GOOD">{{'demoJavaHerooooApp.ScoreLadder.GOOD' | translate}}</option>
+                        <option value="EXCELLENT">{{'demoJavaHerooooApp.ScoreLadder.EXCELLENT' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.answer.proof" for="field_proof">Proof</label>
+                    <input type="text" class="form-control" name="proof" id="field_proof"
+                        [(ngModel)]="answer.proof" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.answer.fullEvaluate" for="field_fullEvaluate">Full Evaluate</label>
+                    <select class="form-control" id="field_fullEvaluate" name="fullEvaluate" [(ngModel)]="answer.fullEvaluate" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fullEvaluateOption.id === answer.fullEvaluate?.id ? answer.fullEvaluate : fullEvaluateOption" *ngFor="let fullEvaluateOption of fullevaluates; trackBy: trackFullEvaluateById">{{fullEvaluateOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.answer.critetiaEvaluate" for="field_critetiaEvaluate">Critetia Evaluate</label>
+                    <select class="form-control" id="field_critetiaEvaluate" name="critetiaEvaluate" [(ngModel)]="answer.critetiaEvaluate" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="criteriaEvaluateOption.id === answer.critetiaEvaluate?.id ? answer.critetiaEvaluate : criteriaEvaluateOption" *ngFor="let criteriaEvaluateOption of criteriaevaluates; trackBy: trackCriteriaEvaluateById">{{criteriaEvaluateOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

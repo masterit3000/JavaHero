@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="criteriaType">
+            <h2><span jhiTranslate="demoJavaHerooooApp.criteriaType.detail.title">Criteria Type</span> {{criteriaType.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaType.content">Content</span></dt>
+                <dd>
+                    <span>{{criteriaType.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaType.level">Level</span></dt>
+                <dd>
+                    <span>{{criteriaType.level}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/criteria-type', criteriaType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

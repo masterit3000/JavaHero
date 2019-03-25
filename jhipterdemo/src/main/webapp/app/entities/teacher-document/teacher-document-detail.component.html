@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="teacherDocument">
+            <h2><span jhiTranslate="demoJavaHerooooApp.teacherDocument.detail.title">Teacher Document</span> {{teacherDocument.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacherDocument.role">Role</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'demoJavaHerooooApp.Role.' + teacherDocument.role}}">{{teacherDocument.role}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacherDocument.teacher">Teacher</span></dt>
+                <dd>
+                    <div *ngIf="teacherDocument.teacher">
+                        <a [routerLink]="['/teacher', teacherDocument.teacher?.id, 'view']">{{teacherDocument.teacher?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacherDocument.document">Document</span></dt>
+                <dd>
+                    <div *ngIf="teacherDocument.document">
+                        <a [routerLink]="['/document', teacherDocument.document?.id, 'view']">{{teacherDocument.document?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/teacher-document', teacherDocument.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

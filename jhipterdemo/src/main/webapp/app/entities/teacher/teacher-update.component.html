@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-teacher-heading" jhiTranslate="demoJavaHerooooApp.teacher.home.createOrEditLabel">Create or edit a Teacher</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!teacher.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="teacher.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.identityNumber" for="field_identityNumber">Identity Number</label>
+                    <input type="text" class="form-control" name="identityNumber" id="field_identityNumber"
+                        [(ngModel)]="teacher.identityNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.fullName" for="field_fullName">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" id="field_fullName"
+                        [(ngModel)]="teacher.fullName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.phone" for="field_phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="field_phone"
+                        [(ngModel)]="teacher.phone" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.doB" for="field_doB">Do B</label>
+                    <div class="d-flex">
+                        <input id="field_doB" type="datetime-local" class="form-control" name="doB" [(ngModel)]="doB" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="teacher.address" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="teacher.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.password" for="field_password">Password</label>
+                    <input type="text" class="form-control" name="password" id="field_password"
+                        [(ngModel)]="teacher.password" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.dataStorage" for="field_dataStorage">Data Storage</label>
+                    <input type="number" class="form-control" name="dataStorage" id="field_dataStorage"
+                        [(ngModel)]="teacher.dataStorage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.usedStorage" for="field_usedStorage">Used Storage</label>
+                    <input type="number" class="form-control" name="usedStorage" id="field_usedStorage"
+                        [(ngModel)]="teacher.usedStorage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.level" for="field_level">Level</label>
+                    <select class="form-control" name="level" [(ngModel)]="teacher.level" id="field_level" >
+                        <option value="TEACHER">{{'demoJavaHerooooApp.TeacherLevel.TEACHER' | translate}}</option>
+                        <option value="DEAN">{{'demoJavaHerooooApp.TeacherLevel.DEAN' | translate}}</option>
+                        <option value="HIGHLEVEL">{{'demoJavaHerooooApp.TeacherLevel.HIGHLEVEL' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" [(ngModel)]="teacher.status" id="field_status" >
+                        <option value="EXIST">{{'demoJavaHerooooApp.Status.EXIST' | translate}}</option>
+                        <option value="DELETED">{{'demoJavaHerooooApp.Status.DELETED' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.teacher.avatar" for="field_avatar">Avatar</label>
+                    <input type="text" class="form-control" name="avatar" id="field_avatar"
+                        [(ngModel)]="teacher.avatar" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

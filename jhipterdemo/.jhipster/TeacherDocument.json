@@ -1,0 +1,35 @@
+{
+    "name": "TeacherDocument",
+    "fields": [
+        {
+            "fieldName": "role",
+            "fieldType": "Role",
+            "fieldValues": "OWNER,SHARED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "teacher",
+            "otherEntityRelationshipName": "teacher",
+            "relationshipName": "teacher",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "document",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190318153606",
+    "entityTableName": "teacher_document",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="answer">
+            <h2><span jhiTranslate="demoJavaHerooooApp.answer.detail.title">Answer</span> {{answer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="demoJavaHerooooApp.answer.scoreLadder">Score Ladder</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'demoJavaHerooooApp.ScoreLadder.' + answer.scoreLadder}}">{{answer.scoreLadder}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.answer.proof">Proof</span></dt>
+                <dd>
+                    <span>{{answer.proof}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.answer.fullEvaluate">Full Evaluate</span></dt>
+                <dd>
+                    <div *ngIf="answer.fullEvaluate">
+                        <a [routerLink]="['/full-evaluate', answer.fullEvaluate?.id, 'view']">{{answer.fullEvaluate?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.answer.critetiaEvaluate">Critetia Evaluate</span></dt>
+                <dd>
+                    <div *ngIf="answer.critetiaEvaluate">
+                        <a [routerLink]="['/criteria-evaluate', answer.critetiaEvaluate?.id, 'view']">{{answer.critetiaEvaluate?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/answer', answer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

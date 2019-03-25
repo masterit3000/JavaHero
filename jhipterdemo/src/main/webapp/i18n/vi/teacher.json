@@ -1,0 +1,33 @@
+{
+    "demoJavaHerooooApp": {
+        "teacher": {
+            "home": {
+                "title": "Teachers",
+                "createLabel": "Thêm mới một Teacher",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Teacher"
+            },
+            "created": "Một Teacher mới được tạo với định danh {{ param }}",
+            "updated": "Một Teacher cập nhật với định danh {{ param }}",
+            "deleted": "Một Teacher đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Teacher {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher"
+            },
+            "identityNumber": "Identity Number",
+            "fullName": "Full Name",
+            "phone": "Phone",
+            "doB": "Do B",
+            "address": "Address",
+            "email": "Email",
+            "password": "Password",
+            "dataStorage": "Data Storage",
+            "usedStorage": "Used Storage",
+            "level": "Level",
+            "status": "Status",
+            "avatar": "Avatar",
+            "teacher": "Teacher"
+        }
+    }
+}

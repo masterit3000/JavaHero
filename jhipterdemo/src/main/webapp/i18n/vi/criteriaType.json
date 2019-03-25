@@ -1,0 +1,22 @@
+{
+    "demoJavaHerooooApp": {
+        "criteriaType": {
+            "home": {
+                "title": "Criteria Types",
+                "createLabel": "Thêm mới một Criteria Type",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Criteria Type"
+            },
+            "created": "Một Criteria Type mới được tạo với định danh {{ param }}",
+            "updated": "Một Criteria Type cập nhật với định danh {{ param }}",
+            "deleted": "Một Criteria Type đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Criteria Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Criteria Type"
+            },
+            "content": "Content",
+            "level": "Level"
+        }
+    }
+}

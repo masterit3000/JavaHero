@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="criteriaEvaluate">
+            <h2><span jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.detail.title">Criteria Evaluate</span> {{criteriaEvaluate.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.content">Content</span></dt>
+                <dd>
+                    <span>{{criteriaEvaluate.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.level">Level</span></dt>
+                <dd>
+                    <span>{{criteriaEvaluate.level}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.pass">Pass</span></dt>
+                <dd>
+                    <span>{{criteriaEvaluate.pass}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.good">Good</span></dt>
+                <dd>
+                    <span>{{criteriaEvaluate.good}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.excellent">Excellent</span></dt>
+                <dd>
+                    <span>{{criteriaEvaluate.excellent}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.criteriaType">Criteria Type</span></dt>
+                <dd>
+                    <div *ngIf="criteriaEvaluate.criteriaType">
+                        <a [routerLink]="['/criteria-type', criteriaEvaluate.criteriaType?.id, 'view']">{{criteriaEvaluate.criteriaType?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/criteria-evaluate', criteriaEvaluate.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

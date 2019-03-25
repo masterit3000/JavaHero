@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="notification">
+            <h2><span jhiTranslate="demoJavaHerooooApp.notification.detail.title">Notification</span> {{notification.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="demoJavaHerooooApp.notification.name">Name</span></dt>
+                <dd>
+                    <span>{{notification.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.notification.description">Description</span></dt>
+                <dd>
+                    <span>{{notification.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.notification.uRL">U RL</span></dt>
+                <dd>
+                    <span>{{notification.uRL}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.notification.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'demoJavaHerooooApp.Status.' + notification.status}}">{{notification.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.notification.headQuater">Head Quater</span></dt>
+                <dd>
+                    <div *ngIf="notification.headQuater">
+                        <a [routerLink]="['/head-quater', notification.headQuater?.id, 'view']">{{notification.headQuater?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.notification.notificationType">Notification Type</span></dt>
+                <dd>
+                    <div *ngIf="notification.notificationType">
+                        <a [routerLink]="['/notification-type', notification.notificationType?.id, 'view']">{{notification.notificationType?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/notification', notification.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

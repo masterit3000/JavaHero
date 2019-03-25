@@ -1,0 +1,11 @@
+{
+    "demoJavaHerooooApp": {
+        "ScoreLadder": {
+            "null": "",
+            "FAIL": "FAIL",
+            "PASS": "PASS",
+            "GOOD": "GOOD",
+            "EXCELLENT": "EXCELLENT"
+        }
+    }
+}

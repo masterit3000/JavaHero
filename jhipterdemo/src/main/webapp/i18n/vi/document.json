@@ -1,0 +1,28 @@
+{
+    "demoJavaHerooooApp": {
+        "document": {
+            "home": {
+                "title": "Documents",
+                "createLabel": "Thêm mới một Document",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Document"
+            },
+            "created": "Một Document mới được tạo với định danh {{ param }}",
+            "updated": "Một Document cập nhật với định danh {{ param }}",
+            "deleted": "Một Document đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Document {{ id }}?"
+            },
+            "detail": {
+                "title": "Document"
+            },
+            "name": "Name",
+            "description": "Description",
+            "uRL": "U RL",
+            "size": "Size",
+            "tag": "Tag",
+            "status": "Status",
+            "document": "Document",
+            "documentType": "Document Type"
+        }
+    }
+}

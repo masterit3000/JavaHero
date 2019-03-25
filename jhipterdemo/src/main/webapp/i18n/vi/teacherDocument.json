@@ -1,0 +1,23 @@
+{
+    "demoJavaHerooooApp": {
+        "teacherDocument": {
+            "home": {
+                "title": "Teacher Documents",
+                "createLabel": "Thêm mới một Teacher Document",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Teacher Document"
+            },
+            "created": "Một Teacher Document mới được tạo với định danh {{ param }}",
+            "updated": "Một Teacher Document cập nhật với định danh {{ param }}",
+            "deleted": "Một Teacher Document đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Teacher Document {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher Document"
+            },
+            "role": "Role",
+            "teacher": "Teacher",
+            "document": "Document"
+        }
+    }
+}

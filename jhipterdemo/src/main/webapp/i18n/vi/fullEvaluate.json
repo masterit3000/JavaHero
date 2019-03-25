@@ -1,0 +1,22 @@
+{
+    "demoJavaHerooooApp": {
+        "fullEvaluate": {
+            "home": {
+                "title": "Full Evaluates",
+                "createLabel": "Thêm mới một Full Evaluate",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Full Evaluate"
+            },
+            "created": "Một Full Evaluate mới được tạo với định danh {{ param }}",
+            "updated": "Một Full Evaluate cập nhật với định danh {{ param }}",
+            "deleted": "Một Full Evaluate đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Full Evaluate {{ id }}?"
+            },
+            "detail": {
+                "title": "Full Evaluate"
+            },
+            "description": "Description",
+            "teacher": "Teacher"
+        }
+    }
+}

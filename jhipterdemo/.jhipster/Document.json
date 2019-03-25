@@ -1,0 +1,55 @@
+{
+    "name": "Document",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uRL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "EXIST,DELETED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "teacherDocument",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "document"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "documentType",
+            "otherEntityRelationshipName": "document",
+            "relationshipName": "documentType",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190318153607",
+    "entityTableName": "document",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

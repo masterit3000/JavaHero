@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-criteria-evaluate-heading" jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.home.createOrEditLabel">Create or edit a Criteria Evaluate</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!criteriaEvaluate.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="criteriaEvaluate.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.content" for="field_content">Content</label>
+                    <input type="text" class="form-control" name="content" id="field_content"
+                        [(ngModel)]="criteriaEvaluate.content" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.level" for="field_level">Level</label>
+                    <input type="number" class="form-control" name="level" id="field_level"
+                        [(ngModel)]="criteriaEvaluate.level" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.pass" for="field_pass">Pass</label>
+                    <input type="text" class="form-control" name="pass" id="field_pass"
+                        [(ngModel)]="criteriaEvaluate.pass" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.good" for="field_good">Good</label>
+                    <input type="text" class="form-control" name="good" id="field_good"
+                        [(ngModel)]="criteriaEvaluate.good" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.excellent" for="field_excellent">Excellent</label>
+                    <input type="text" class="form-control" name="excellent" id="field_excellent"
+                        [(ngModel)]="criteriaEvaluate.excellent" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="demoJavaHerooooApp.criteriaEvaluate.criteriaType" for="field_criteriaType">Criteria Type</label>
+                    <select class="form-control" id="field_criteriaType" name="criteriaType" [(ngModel)]="criteriaEvaluate.criteriaType" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="criteriaTypeOption.id === criteriaEvaluate.criteriaType?.id ? criteriaEvaluate.criteriaType : criteriaTypeOption" *ngFor="let criteriaTypeOption of criteriatypes; trackBy: trackCriteriaTypeById">{{criteriaTypeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

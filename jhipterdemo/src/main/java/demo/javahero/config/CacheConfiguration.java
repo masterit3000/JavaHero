@@ -41,6 +41,21 @@ public class CacheConfiguration {
             cm.createCache(demo.javahero.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(demo.javahero.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(demo.javahero.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.Teacher.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.Teacher.class.getName() + ".teachers", jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.TeacherDocument.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.Document.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.Document.class.getName() + ".documents", jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.Document.class.getName() + ".documentTypes", jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.DocumentType.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.DocumentType.class.getName() + ".documents", jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.Notification.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.NotificationType.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.HeadQuater.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.CriteriaType.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.Answer.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.CriteriaEvaluate.class.getName(), jcacheConfiguration);
+            cm.createCache(demo.javahero.domain.FullEvaluate.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

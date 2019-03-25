@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="demoJavaHerooooApp.notification.home.title">Notifications</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-notification" [routerLink]="['/notification/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="demoJavaHerooooApp.notification.home.createLabel">
+            Create new Notification
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="notifications">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="demoJavaHerooooApp.notification.name">Name</span></th>
+            <th><span jhiTranslate="demoJavaHerooooApp.notification.description">Description</span></th>
+            <th><span jhiTranslate="demoJavaHerooooApp.notification.uRL">U RL</span></th>
+            <th><span jhiTranslate="demoJavaHerooooApp.notification.status">Status</span></th>
+            <th><span jhiTranslate="demoJavaHerooooApp.notification.headQuater">Head Quater</span></th>
+            <th><span jhiTranslate="demoJavaHerooooApp.notification.notificationType">Notification Type</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let notification of notifications ;trackBy: trackId">
+                <td><a [routerLink]="['/notification', notification.id, 'view' ]">{{notification.id}}</a></td>
+                <td>{{notification.name}}</td>
+                <td>{{notification.description}}</td>
+                <td>{{notification.uRL}}</td>
+                <td jhiTranslate="{{'demoJavaHerooooApp.Status.' + notification.status}}">{{notification.status}}</td>
+                <td>
+                    <div *ngIf="notification.headQuater">
+                        <a [routerLink]="['../head-quater', notification.headQuater?.id, 'view' ]" >{{notification.headQuater?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="notification.notificationType">
+                        <a [routerLink]="['../notification-type', notification.notificationType?.id, 'view' ]" >{{notification.notificationType?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/notification', notification.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/notification', notification.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'notification', { outlets: { popup: notification.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "demoJavaHerooooApp": {
+        "criteriaEvaluate": {
+            "home": {
+                "title": "Criteria Evaluates",
+                "createLabel": "Thêm mới một Criteria Evaluate",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Criteria Evaluate"
+            },
+            "created": "Một Criteria Evaluate mới được tạo với định danh {{ param }}",
+            "updated": "Một Criteria Evaluate cập nhật với định danh {{ param }}",
+            "deleted": "Một Criteria Evaluate đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Criteria Evaluate {{ id }}?"
+            },
+            "detail": {
+                "title": "Criteria Evaluate"
+            },
+            "content": "Content",
+            "level": "Level",
+            "pass": "Pass",
+            "good": "Good",
+            "excellent": "Excellent",
+            "criteriaType": "Criteria Type"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="teacher">
+            <h2><span jhiTranslate="demoJavaHerooooApp.teacher.detail.title">Teacher</span> {{teacher.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.identityNumber">Identity Number</span></dt>
+                <dd>
+                    <span>{{teacher.identityNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.fullName">Full Name</span></dt>
+                <dd>
+                    <span>{{teacher.fullName}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.phone">Phone</span></dt>
+                <dd>
+                    <span>{{teacher.phone}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.doB">Do B</span></dt>
+                <dd>
+                    <span>{{teacher.doB}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.address">Address</span></dt>
+                <dd>
+                    <span>{{teacher.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.email">Email</span></dt>
+                <dd>
+                    <span>{{teacher.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.password">Password</span></dt>
+                <dd>
+                    <span>{{teacher.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.dataStorage">Data Storage</span></dt>
+                <dd>
+                    <span>{{teacher.dataStorage}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.usedStorage">Used Storage</span></dt>
+                <dd>
+                    <span>{{teacher.usedStorage}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.level">Level</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'demoJavaHerooooApp.TeacherLevel.' + teacher.level}}">{{teacher.level}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'demoJavaHerooooApp.Status.' + teacher.status}}">{{teacher.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="demoJavaHerooooApp.teacher.avatar">Avatar</span></dt>
+                <dd>
+                    <span>{{teacher.avatar}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/teacher', teacher.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

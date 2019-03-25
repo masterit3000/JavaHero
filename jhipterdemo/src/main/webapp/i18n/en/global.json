@@ -7,6 +7,17 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "teacher": "Teacher",
+                "teacherDocument": "Teacher Document",
+                "document": "Document",
+                "documentType": "Document Type",
+                "notification": "Notification",
+                "notificationType": "Notification Type",
+                "headQuater": "Head Quater",
+                "criteriaType": "Criteria Type",
+                "answer": "Answer",
+                "criteriaEvaluate": "Criteria Evaluate",
+                "fullEvaluate": "Full Evaluate",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
